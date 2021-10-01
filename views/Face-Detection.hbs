@@ -1,0 +1,52 @@
+<h1 style="text-align: center; color:#fff">Face Detection</h1>
+<div class="banner spider">
+    <img src="https://by3302files.storage.live.com/y4mQIh95l6jwhrjmHuC3a5QdquW6l3nfegniihY2MbqRh3R1UChdkzXb2Uh3xHH67DAAc_eF3hMS6GXHwhDIEx5eKOuU62cgOwcRaBMKgSiFhELkfWdOd6PP5Y3_OhrVziS8YkzRe8T616AclO1OSw5_MfnHy07oZ4N-k1i-hVX6mYtC55R2pN3NlTNg9EEmNjE?width=40&height=20&cropmode=none"
+    data-src="https://by3302files.storage.live.com/y4mZTlPMPQd8FsgYAgE9lPn-YIbHtcXi2f5g5Sn_DPaFC242S4LcywgsMIceU2CoBmqeu-uHm3NXeyehHcJuQoOFU_yPl018I2zIA2O2Hyxf-FtAAN5sh6x4pmkf5F6QYn9jf6qfPP_YTadbpeZ_PY8ku1lTyDAjWNjzZ8Zl6PAf1BJUbzyjfLbnP-Fv-pWI7kW?width=1024&height=516&cropmode=none">
+</div>
+<hr style="border: 1px solid #777;">
+    <div class="youtube-Description" style="margin-top: 20px;color: #999;">
+        <p style="text-align: center; margin-top: 10px;">The libraries used in this project are NumPy and OpenCV
+        </p>
+        <hr style="border: 1px solid #777;">
+    </div>
+
+{{!-- Steering --}}
+
+<div style="color: #999;text-align:justify">
+    <div style="margin: 100px;"></div>
+
+    <h4 style="color: #fff;"><i class="fa fa-star" aria-hidden="true"></i>&nbsp Code
+    </h4>
+
+<pre class="line-numbers">
+<code class="python">
+import numpy as np
+import cv2
+faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+cap = cv2.VideoCapture(0)
+cap.set(3,640) # set Width
+cap.set(4,480) # set Height
+while True:
+    ret, img = cap.read()
+    img = cv2.flip(img, 1)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    faces = faceCascade.detectMultiScale(
+        gray,     
+        scaleFactor=1.2,
+        minNeighbors=5,     
+        minSize=(20, 20)
+    )
+    for (x,y,w,h) in faces:
+        cv2.rectangle(img,(x,y),(x+w,y+h),(255,100,0),2)
+        roi_gray = gray[y:y+h, x:x+w]
+        roi_color = img[y:y+h, x:x+w]  
+    cv2.imshow('video',img)
+    k = cv2.waitKey(30) & 0xff
+    if k == 27: # press 'ESC' to quit
+        break
+cap.release()
+cv2.destroyAllWindows()
+</code>
+</pre>
+
+</div>

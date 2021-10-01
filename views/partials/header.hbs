@@ -1,0 +1,25 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-dark">
+    <div class="container-fluid" id="brand">
+        <a class="navbar-brand" href="Main">
+            <div id="logo-symbol">
+                P
+            </div>
+            <div id="logo-text">
+                <p style="font-size: 20px;"><strong>Piyush</strong> Singh</p>
+            </div>
+        </a>
+        <!-- toggle button -->
+        <a id="nav-menu-button" style="font-size: 2em;color: #fff;" onclick="openSideBar()"><i class="fa fa-bars"
+                aria-hidden="true"></i></a>
+        <div id="nav-menu" class="contain">
+            <a href="Main" class="{{#if active.Main}}active{{/if}} menu-options">About Me</a>
+            <a href="Projects" class="{{#if active.Projects}}active{{/if}} menu-options">Projects</a>
+            <a href="Contact" class="{{#if active.Contact}}active{{/if}} menu-options">Contact</a>
+        </div>
+</nav>
+
+<div id="side-menu">
+    <a href="Main" class="{{#if active.Main}}active{{/if}} menu-options">About Me</a>
+    <a href="Projects" class="{{#if active.Projects}}active{{/if}} menu-options">Projects</a>
+    <a href="Contact" class="{{#if active.Contact}}active{{/if}} menu-options">Contact</a>
+</div>

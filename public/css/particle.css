@@ -1,0 +1,14 @@
+canvas {
+  /* display: block; */
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #285f6e, #005572, #004975, #003b74, #182b6e);
+  /* background: rgb(23, 67, 110); */
+}

@@ -1,0 +1,55 @@
+form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.forms {
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+  color: #fff;
+}
+
+.formheading {
+  height: 50px;
+  font-weight: 600;
+}
+
+.formInput {
+  border: 1px solid #555;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-left: 30px;
+  height: 45px;
+  width: 100%;
+  max-width: 400px;
+  background: #222;
+  color: #fff;
+  /* transition: 1s; */
+}
+
+.formInput:focus {
+  color: #fff;
+  border-color: #007ced;
+  box-shadow: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.formInput::placeholder {
+  color: #555;
+}
+
+#messageInput {
+  height: 200px;
+  padding-top: 10px;
+}
+
+#send {
+  margin-top: 20px;
+  /* margin-left: 30%; */
+}
+
+.bluebutton:focus {
+  outline: none;
+}
